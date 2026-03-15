@@ -7,8 +7,8 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "products")
-public class Product {
+@Table(name = "categories")
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,13 +16,4 @@ public class Product {
 
     private String name;
 
-    private String description;
-
-    private Double price;
-
-    private Integer stock;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
 }
