@@ -15,12 +15,17 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public Order createOrder(@RequestBody Order order){
+    public Order createOrder(@RequestBody Order order) {
         return orderService.createOrder(order);
     }
 
+    @PostMapping("/checkout")
+    public Order checkout() {
+        return orderService.checkout();
+    }
+
     @GetMapping
-    public List<Order> getOrders(){
+    public List<Order> getOrders() {
         return orderService.getAllOrders();
     }
 }
